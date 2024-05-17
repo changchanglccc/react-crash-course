@@ -6,14 +6,14 @@ import Modal from './Modal';
 
 function PostsList() {
     const [enterBody, setEnterBody] = useState('');
-    const [enterName, setEnterName] = useState('');
+    const [enterAuthor, setEnterAuthor] = useState('');
 
     function changeBodyHandler(event) {
         setEnterBody(event.target.value);
     }
 
-    function changeNameHandler(event) {
-        setEnterName(event.target.value);
+    function changeAuthorHandler(event) {
+        setEnterAuthor(event.target.value);
     }
 
     return (
@@ -21,11 +21,11 @@ function PostsList() {
             <Modal>
                 <NewPost
                     onBodyChange={changeBodyHandler}
-                    onNameChange={changeNameHandler}/>
+                    onAuthorChange={changeAuthorHandler}/>
             </Modal>
 
             <ul className={classes.posts}>
-                <Post author={enterName} body={enterBody}/>
+                <Post author={enterAuthor} body={enterBody}/>
                 <Post author="Jenny" body="check here!"/>
                 <Post author="James" body="Hello, my name is James!"/>
             </ul>
